@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 270px;
+  background-color: "#f10f10f10";
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  height: 100vh;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.sidebar li:hover {
+  background-color: #ddd;
+}
+
+.contentContainer {
+  flex: 1;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+.topnav {
+  background-color: #F1F1F1;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.topnav div {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 12px;
+  color: black;
+  margin-left: 10px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.topnav div:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav div.active {
+  background-color: #FFF;
+}
+
+
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.leftPart {
+  display: flex;
+  flex-direction: center;
+  gap: 10px
+}
+
+.rightPart {
+  margin-left: auto;
+}
+
+.nameTable {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.count {
+  background-color: #A85757;
+  color: white;
+  height: 22px;
+  margin-top: 15px;
+  width: 85px;
+  padding-left: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.addBtn {
+  background-color: #A85757;
+  color: white;
+  border-radius: 5px;
+}

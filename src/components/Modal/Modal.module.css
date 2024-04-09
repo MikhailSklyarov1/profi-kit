@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.fields {
+    flex: 1 0 auto;
+    min-height: 300px;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+.cancel {
+    width: 48%;
+    background-color: #514A4A;
+    color: white;
+}
+
+.ok {
+    width: 48%;
+    margin-left: 10px;
+    background-color: #A85757;
+    color: white;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.explanation {
+    color: gray;
+}
+
+.input {
+    margin-bottom: 12px;
+    margin-top: 5px;
+}
