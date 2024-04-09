@@ -39,7 +39,6 @@ const columns: TableColumnsType<DataType> = [
     dataIndex: 'edit',
     align: 'right',
     render: (_, record) => {
-      console.log(record)
       return <span><Modal item={record} btnModal={<EditOutlined></EditOutlined>}></Modal></span>;
     },
   },
