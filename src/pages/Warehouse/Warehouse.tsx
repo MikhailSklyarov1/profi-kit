@@ -10,28 +10,29 @@ import useStore from '../../store/items';
 
 function Warehouse() {
 
-  const [activeTab, setActiveTab] = useState("Склады");
+  const [activeTab, setActiveTab] = useState("warehouses");
   const { count } = useStore();
 
   const handleClick = (e: any) => {
-    setActiveTab(e.target.innerText);
+    const textInElem = e.target.innerText;
+    setActiveTab(textInElem === "Склады" ? "warehouses" : "transactions");
   };
 
   return (
     <div className={warehouseStyle.container}>
       <div className={warehouseStyle.sidebar}>
         <div className={warehouseStyle.topnav}>
-          <div className={activeTab === "Склады" ? warehouseStyle.active : ""} onClick={handleClick}><HomeOutlined />Склады</div>
-          <div onClick={() => activeTab === "Склады" ? setActiveTab('Транзакции') : setActiveTab('Склады')}><SwapOutlined /></div>
-          <div className={activeTab === "Транзакции" ? warehouseStyle.active : ""} onClick={handleClick}>Транзакции</div>
+          <div className={activeTab === "warehouses" ? warehouseStyle.active : ""} onClick={handleClick}><HomeOutlined />Склады</div>
+          <div onClick={() => activeTab === "warehouses" ? setActiveTab("transactions") : setActiveTab("warehouses")}><SwapOutlined /></div>
+          <div className={activeTab === "transactions" ? warehouseStyle.active : ""} onClick={handleClick}>Транзакции</div>
         </div>
 
         <div style={{ padding: "0px 16px" }}>
-          {activeTab === "Склады" && (
+          {activeTab === "warehouses" && (
             <ListTypeWarehouse />
           )}
 
-          {activeTab === "Транзакции" && (
+          {activeTab === "transactions" && (
             <ListTypeWarehouse />
           )}
         </div>
