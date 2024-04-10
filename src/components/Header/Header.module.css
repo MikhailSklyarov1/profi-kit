@@ -26,7 +26,6 @@
     display: flex;
     gap: 1rem;
     margin: 0 auto;
-    /* Выравнивание по центру */
 }
 
 .navLink {
@@ -38,9 +37,3 @@
 .navLink:hover {
     color: #ccc;
 }
-
-
-.segmented-wrapper .ant-radio-wrapper.ant-radio-wrapper-checked {
-    background-color: red !important; /* Замените на ваш токен CSS переменной */
-    color: yellow !important; /* Цвет текста для лучшей видимости на выбранной вкладке */
-  }

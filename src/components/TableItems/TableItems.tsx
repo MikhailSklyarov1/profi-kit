@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Table, Drawer, Input, Button, Space, Tag } from 'antd';
+import { Table, Input, Button, Space } from 'antd';
 import type { InputRef, TableColumnsType, TableColumnType } from 'antd';
 import useStore from '../../store/items';
 import useRerenderTrigger from '../../store/rerenderTrigger';
@@ -22,7 +22,6 @@ interface DataType {
 
 
 type DataIndex = keyof DataType;
-
 
 
 
@@ -51,7 +50,7 @@ function TableItems() {
     setSearchText('');
   };
 
-  const getColumnSearchProps = (dataIndex: DataIndex): TableColumnType<DataType> => ({
+  const getColumnSearchProps = (dataIndex: DataIndex): TableColumnType<DataType> => ({   // Поиск и фильтрация по СТРАНИЦЕ!
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters, close }) => (
       <div style={{ padding: 8 }} onKeyDown={(e) => e.stopPropagation()}>
         <Input
@@ -161,7 +160,7 @@ function TableItems() {
   }
 
   useEffect(() => {
-    setTimeout(() => getItems(pagination), 0);
+    setTimeout(() => getItems(pagination), 10);
   }, [stateRer, pagination]);
 
   return (
@@ -169,7 +168,6 @@ function TableItems() {
       <Table className={tableStyle.table} columns={columns} dataSource={items} pagination={{ total:count }}
         onChange={(e) => onChangePagination(e)} scroll={{ y: '65vh' }} 
       />
-
     </>
   );
 }

@@ -20,7 +20,7 @@ type Store = {
 }
 
 
-const jwtToken = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMjc4MjgwMH0.HVB0WHIquHlu8k7qKVVPW1ies5uVtqOyHqW3Bjsuuq36Ks-Z12GPdN2-kuv7DE2WGYk51pQq0bUfzvsREcOoWQ'; // Лучше перенести
+const jwtToken = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMjc4MjgwMH0.HVB0WHIquHlu8k7qKVVPW1ies5uVtqOyHqW3Bjsuuq36Ks-Z12GPdN2-kuv7DE2WGYk51pQq0bUfzvsREcOoWQ'; // Лучше перенести, например, в localstorage
 
 const useStore = create<Store>()((set) => ({
     items: [{ id: '', name: '', measurement_units: '', code: '', description:'', key:'' }],
@@ -33,7 +33,11 @@ const useStore = create<Store>()((set) => ({
         axios.get(`https://hcateringback-dev.unitbeandev.com/api/items?page=${pagination.current}&pageSize=${pagination.pageSize}`, { headers })
             .then((res: any) => {
 
-                const selectedFields = res.data.result.map(({ id, name, measurement_units, code, description }: DataItem) => ({ id, key: id, name, measurement_units, code, description }));
+                const selectedFields = res.data.result.map(({ 
+                    id, name, measurement_units, code, description 
+                }: DataItem) => ({ 
+                    id, key: id, name, measurement_units, code, description 
+                }));
 
                 set(() => ({ items: selectedFields }))
                 set(() => ({count: res.data.total}))

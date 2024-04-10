@@ -1,6 +1,6 @@
 import { Button } from 'antd';
 import warehouseStyle from "./Warehouse.module.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import { HomeOutlined, SwapOutlined, PlusOutlined } from '@ant-design/icons';
 import ListTypeWarehouse from '../../components/ListTypeWarehouse/ListTypeWarehouse';
 import TableItems from '../../components/TableItems/TableItems';

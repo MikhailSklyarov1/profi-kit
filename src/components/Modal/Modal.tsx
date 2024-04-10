@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Drawer, Input } from 'antd';
-import type { TableColumnsType } from 'antd';
 import useStore from '../../store/items';
 import useRerenderTrigger from '../../store/rerenderTrigger';
 import { CloseOutlined, HomeOutlined } from '@ant-design/icons';
